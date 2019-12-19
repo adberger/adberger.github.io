@@ -1,0 +1,25 @@
+# Education Template
+- layout: left
+  name: Gewerblich-Industrielle Berufsschule Bern
+  dates: 2009 - 2013
+  qualification: Informatiker EFZ (Apprenticeship)
+  #quote: >
+  #  Quote
+  description: | # this will include new lines to allow paragraphs
+    Description of qualification
+- layout: left
+  name: Gewerblich-Industrielle Berufsschule Bern
+  dates: 2013 - 2015
+  qualification: Technische Berufsmaturität (Professional Baccalaureate Technical Option)
+  #quote: >
+  #  Quote
+  description: | # this will include new lines to allow paragraphs
+    Description of qualification
+- layout: left
+  name: Technik und Informatik - Berner Fachhochschule
+  dates: 2018 - present & ongoing
+  qualification: Bachelor of Science (BSc)
+  #quote: >
+  #  Quote
+  description: | # this will include new lines to allow paragraphs
+    Description of qualification

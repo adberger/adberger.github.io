@@ -1,0 +1,13 @@
+# Experience template
+- layout: left
+  company: Bedag Informatik AG
+  link: www.bedag.ch
+  jobs:
+    - title: Apprentice
+      dates: 2009 - 2013
+    - title: System Specialist
+      dates: 2013 - present
+  quote: >
+   Engagement, Integrität und Professionalität
+  description: |
+    Data center services & Software solutions for the cantons of switzerland (mainly Canton of Bern)

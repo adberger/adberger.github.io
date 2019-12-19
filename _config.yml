@@ -1,0 +1,69 @@
+# Site
+repository: tellbow/tellbow.github.io
+# favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
+description: this is my awesome site.
+
+# Personal info
+name: Adrian Berger
+title: System Specialist
+#email: Your email (optional)
+#phone: Your phone number (optional)
+#website: https://tellbow.github.io
+
+# Social links
+#twitter_username: tellbow
+github_username:  tellbow
+#dribbble_username: tellbow
+#facebook_username: tellbow
+#flickr_username: tellbow
+#instagram_username: tellbow
+#linkedin_username: tellbow
+#xing_username: tellbow
+#pinterest_username: tellbow
+#youtube_username: tellbow
+#googleplus_username: +tellbow
+
+# About Section
+# about_title: About Me (Use this to override about section title)
+about_profile_image: images/profile.jpg
+about_content: |
+  My name is Adrian Berger.  
+  I'm living in Switzerland and currently studying computer science.
+
+# Projects Section
+# projects_title: Projects #(Use this to override about projects section title)
+
+# Experience Section
+# experience_title: Experience #(Use this to override about experience section title)
+
+# Education Section
+# education_title: Education #(Use this to override about education section title)
+
+# More Section
+more_title: Interests
+more_content: |
+  * Travel
+  * Swimming
+  * Snowboarding
+  * Gaming
+  * Movies/Series
+
+# Footer
+footer_show_references: false
+
+# Build settings
+markdown: kramdown
+remote_theme: sproogen/modern-resume-theme
+url: https://tellbow.github.io
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
+
+exclude:
+ - Gemfile
+ - Gemfile.lock

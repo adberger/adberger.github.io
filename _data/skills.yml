@@ -1,0 +1,39 @@
+# Skills template
+- layout: left
+  name: Cloud Native
+  #quote: >
+  # Quote
+  description: |
+    * Kubernetes
+    * Helm
+    * GitLab CI
+    * Docker
+- layout: left
+  name: Technologies
+  #quote: >
+  # Quote
+  description: |
+    * Windows Server
+    * Internet Information Services (IIS)
+    * Apache HTTP server
+    * Apache Tomcat
+- layout: left
+  name: Programming (beginner)
+  #quote: >
+  # Quote
+  description: |
+    * Java (Spring)
+- layout: left
+  name: Scripting (advanced)
+  #quote: >
+  # Quote
+  description: |
+    * PowerShell
+- layout: left
+  name: Scripting (beginner)
+  #quote: >
+  # Quote
+  description: |
+    * Bash
+    * Ruby
+    * Python

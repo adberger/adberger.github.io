@@ -1,2 +1,0 @@
-# adberger.github.io
-Biography
