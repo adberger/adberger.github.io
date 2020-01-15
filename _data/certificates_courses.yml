@@ -33,7 +33,7 @@
 - layout: left
   name: edX
   certificates_courses:
-    - title: LFS158x: Introduction to Kubernetes
+    - title: LFS158x - Introduction to Kubernetes
       date: 05.07.2018
   #quote: >
   # Quote
