@@ -1,24 +1,24 @@
 # Certificates & Courses template
 - layout: left
-  name: Windows
+  name: edX
   certificates_courses:
-    - title: Installing and Configuring Windows Server 2012 (70-410)
-      date: 30.06.2016
+    - title: LFS162x - Introduction to Site Reliability Engineering and DevOps
+      date: 04.03.2020
   #quote: >
   # Quote
   description: |
-    The course 70-410: Installing and Configuring Windows Server 2012 R2 prepares the candidates for the Microsoft exam 70-410. In addition to that, the course covers a range of topics including system administration related functions, installing and configuring servers, configuring roles and features, configuring Hyper-V, deploying and configuring core network services, installing and administering active directory, and creating and managing group policy. 
-    
-    The course provides an excellent opportunity to get hands-on practice of installing and configuring Windows Server 2012 R2. This course is part one in a series of three courses that provides the skills and knowledge necessary to implement a core Windows Server 2012 infrastructure in an existing enterprise environment.
+    A course of study offered by LinuxFoundationX, an online learning initiative of The Linux Foundation.
+
 - layout: left
-  name: SharePoint
+  name: edX
   certificates_courses:
-    - title: Plan and Administer SharePoint 2016 (203391 @ Digicomp)
-      date: 23.06.2017
+    - title: LFS158x - Introduction to Kubernetes
+      date: 05.07.2018
   #quote: >
   # Quote
   description: |
-    Plan, administer and support Microsoft SharePoint 2016. Helpful guidelines, best practices, and considerations to optimize the SharePoint server deployment.
+    A course of study offered by LinuxFoundationX, an online learning initiative of The Linux Foundation.
+
 - layout: left
   name: Linux
   certificates_courses:
@@ -30,12 +30,25 @@
     LPIC-1 is the first certification in LPI’s multi-level Linux professional certification program. The LPIC-1 will validate the candidate's ability to perform maintenance tasks on the command line, install and configure a computer running Linux and configure basic networking.
     
     The LPIC-1 is designed to reflect current research and validate a candidate's proficiency in real world system administration. The objectives are tied to real-world job skills, which we determine through job task analysis surveying during exam development.
+
 - layout: left
-  name: edX
+  name: SharePoint
   certificates_courses:
-    - title: LFS158x - Introduction to Kubernetes
-      date: 05.07.2018
+    - title: Plan and Administer SharePoint 2016 (203391 @ Digicomp)
+      date: 23.06.2017
   #quote: >
   # Quote
   description: |
-    A course of study offered by LinuxFoundationX, an online learning initiative of The Linux Foundation.
+    Plan, administer and support Microsoft SharePoint 2016. Helpful guidelines, best practices, and considerations to optimize the SharePoint server deployment.
+
+- layout: left
+  name: Windows
+  certificates_courses:
+    - title: Installing and Configuring Windows Server 2012 (70-410)
+      date: 30.06.2016
+  #quote: >
+  # Quote
+  description: |
+    The course 70-410: Installing and Configuring Windows Server 2012 R2 prepares the candidates for the Microsoft exam 70-410. In addition to that, the course covers a range of topics including system administration related functions, installing and configuring servers, configuring roles and features, configuring Hyper-V, deploying and configuring core network services, installing and administering active directory, and creating and managing group policy. 
+    
+    The course provides an excellent opportunity to get hands-on practice of installing and configuring Windows Server 2012 R2. This course is part one in a series of three courses that provides the skills and knowledge necessary to implement a core Windows Server 2012 infrastructure in an existing enterprise environment.
