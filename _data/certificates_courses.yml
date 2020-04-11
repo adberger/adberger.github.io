@@ -1,5 +1,17 @@
 # Certificates & Courses template
 - layout: left
+  name: SAFe
+  certificates_courses:
+    - title: Leading SAFe Course (5.0)
+      date: 12.03.2020
+    - title: Certified SAFe 5 Agilist
+      date: 11.04.2020
+  #quote: >
+  # Quote
+  description: |
+    During this two-day course, attendees gain the knowledge necessary to lead a Lean-Agile enterprise by leveraging the Scaled Agile Framework® (SAFe®) and its underlying principles derived from Lean, systems thinking, Agile development, product development flow, and DevOps.
+
+- layout: left
   name: edX
   certificates_courses:
     - title: LFS162x - Introduction to Site Reliability Engineering and DevOps
