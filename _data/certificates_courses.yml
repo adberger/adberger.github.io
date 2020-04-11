@@ -2,10 +2,10 @@
 - layout: left
   name: SAFe
   certificates_courses:
-    - title: Leading SAFe Course (5.0)
-      date: 12.03.2020
     - title: Certified SAFe 5 Agilist
       date: 11.04.2020
+    - title: Leading SAFe Course (5.0)
+      date: 12.03.2020
   #quote: >
   # Quote
   description: |
@@ -16,14 +16,6 @@
   certificates_courses:
     - title: LFS162x - Introduction to Site Reliability Engineering and DevOps
       date: 04.03.2020
-  #quote: >
-  # Quote
-  description: |
-    A course of study offered by LinuxFoundationX, an online learning initiative of The Linux Foundation.
-
-- layout: left
-  name: edX
-  certificates_courses:
     - title: LFS158x - Introduction to Kubernetes
       date: 05.07.2018
   #quote: >
@@ -32,7 +24,7 @@
     A course of study offered by LinuxFoundationX, an online learning initiative of The Linux Foundation.
 
 - layout: left
-  name: Linux
+  name: Linux Professional Institute
   certificates_courses:
     - title: LPIC-1 - Linux-Administrator
       date: 08.10.2018
@@ -44,7 +36,7 @@
     The LPIC-1 is designed to reflect current research and validate a candidate's proficiency in real world system administration. The objectives are tied to real-world job skills, which we determine through job task analysis surveying during exam development.
 
 - layout: left
-  name: SharePoint
+  name: Microsoft
   certificates_courses:
     - title: Plan and Administer SharePoint 2016 (203391 @ Digicomp)
       date: 23.06.2017
@@ -54,7 +46,7 @@
     Plan, administer and support Microsoft SharePoint 2016. Helpful guidelines, best practices, and considerations to optimize the SharePoint server deployment.
 
 - layout: left
-  name: Windows
+  name: Microsoft
   certificates_courses:
     - title: Installing and Configuring Windows Server 2012 (70-410)
       date: 30.06.2016
