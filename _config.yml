@@ -1,69 +1,161 @@
 # Site
-repository: tellbow/tellbow.github.io
-# favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
-description: this is my awesome site.
+repository: adberger/adberger.github.io
+# favicon: images/favicon.ico
+
+# Content configuration version
+version: 2
 
 # Personal info
 name: Adrian Berger
-title: System Specialist
-#email: Your email (optional)
-#phone: Your phone number (optional)
-#website: https://tellbow.github.io
+title: DevOps Engineer
+
+# Dark Mode (true/false/never)
+darkmode: false
 
 # Social links
-#twitter_username: tellbow
-github_username:  tellbow
-#dribbble_username: tellbow
-#facebook_username: tellbow
-#flickr_username: tellbow
-#instagram_username: tellbow
-#linkedin_username: tellbow
-#xing_username: tellbow
-#pinterest_username: tellbow
-#youtube_username: tellbow
-#googleplus_username: +tellbow
+github_username: adberger
+linkedin_username: adrian-b-726572194
 
 # About Section
-# about_title: About Me (Use this to override about section title)
+# about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: |
-  My name is Adrian Berger.  
+  Hi, my name is Adrian Berger.
+
   I'm living in Switzerland and currently studying computer science.
 
-# Projects Section
-# projects_title: Projects #(Use this to override about projects section title)
+content:
+  - title: Skills
+    layout: list
+    content:
+      - title: Cloud Native
+        layout: left
+        description: |
+          * Kubernetes
+          * Helm
+          * GitLab CI
+          * Docker
+      - title: Technologies
+        layout: left
+        description: |
+          * Windows Server
+          * Internet Information Services (IIS)
+          * Apache HTTP server
+          * Apache Tomcat
+      - title: Programming (beginner)
+        layout: left
+        description: |
+          * Java (Spring)
+      - title: Scripting (advanced)
+        layout: left
+        description: |
+          * PowerShell
+      - title: Scripting (beginner)
+        layout: left
+        description: |
+          * Bash
+          * Ruby
+          * Python
 
-# Experience Section
-# experience_title: Experience #(Use this to override about experience section title)
+  - title: Experience
+    layout: list
+    content:
+      - title: Bedag Informatik AG
+        layout: left
+        link: www.bedag.ch
+        sub_title: Apprentice System Specialist
+        caption: 2009 - 2013
+        quote: >
+          Engagement, Integrität und Professionalität
+        description: |
+          Data center services & Software solutions for the cantons of switzerland (mainly Canton of Bern)
+      - title: Bedag Informatik AG
+        layout: left
+        link: www.bedag.ch
+        sub_title: System Specialist
+        caption: 2013 - 2020
+        quote: >
+          Engagement, Integrität und Professionalität
+        description: |
+          Data center services & Software solutions for the cantons of switzerland (mainly Canton of Bern)
+      - title: Bedag Informatik AG
+        layout: left
+        link: www.bedag.ch
+        sub_title: Devops Engineer
+        caption: 2020 - present
+        quote: >
+          Engagement, Integrität und Professionalität
+        description: |
+          Data center services & Software solutions for the cantons of switzerland (mainly Canton of Bern)
 
-# Education Section
-# education_title: Education #(Use this to override about education section title)
+  - title: Education
+    layout: list
+    content:
+      - layout: left
+        title: Berner Fachhochschule
+        sub_title: Technik und Informatik
+        caption: 2018 - present & ongoing
+        description: BSc Computer Science
+      - layout: left
+        title: gibb
+        sub_title: Berufsfachschule Bern
+        caption: 2013 - 2015
+        description: Technische Berufsmaturität (Professional Baccalaureate Technical Option)
+      - layout: left
+        title: gibb
+        sub_title: Berufsfachschule Bern
+        caption: 2009 - 2013
+        description: Informatiker EFZ (Apprenticeship)
 
-# More Section
-more_title: Interests
-more_content: |
-  * Travel
-  * Swimming
-  * Snowboarding
-  * Gaming
-  * Movies/Series
+  - title: Certificates & Courses
+    layout: list
+    content:
+      - layout: left
+        title: SAFe
+        sub_title: Scaled Agile Framework
+        description: |
+          * Certified SAFe 5 Agilist
+          * Leading SAFe Course (5.0)
+      - layout: left
+        title: edX
+        description: |
+          * LFS162x - Introduction to Site Reliability Engineering and DevOps
+          * LFS158x - Introduction to Kubernetes
+      - layout: left
+        title: Linux Professional Institute
+        description: |
+          * LPIC-1 - Linux-Administrator
+      - layout: left
+        title: Microsoft
+        description: |
+          * Plan and Administer SharePoint 2016 (203391 @ Digicomp)
+          * Installing and Configuring Windows Server 2012 (70-410)
+
+  - title: Interests
+    layout: list
+    content:
+      - layout: left
+        title: Outdoor
+        description: |
+          * Travel
+          * Swimming
+          * Snowboarding
+      - layout: left
+        title: Indoor
+        description: |
+          * Gaming
+          * Movies/Series
 
 # Footer
 footer_show_references: false
+# references_title: References on request (Override references text)
 
 # Build settings
-markdown: kramdown
-remote_theme: sproogen/modern-resume-theme
-url: https://tellbow.github.io
+remote_theme: sproogen/resume-theme
 
 sass:
   sass_dir: _sass
   style: compressed
 
 plugins:
- - jekyll-feed
  - jekyll-seo-tag
-
-exclude:
- - Gemfile
- - Gemfile.lock
