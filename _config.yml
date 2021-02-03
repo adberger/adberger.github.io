@@ -146,6 +146,21 @@ content:
           * Gaming
           * Movies/Series
 
+  - title: Investments
+    layout: list
+    content:
+    content:
+      - layout: left
+        title: Shares Portfolio
+        description: |
+          ![alt text](images/shares.png "Shares Portfolio")
+      - layout: left
+        title: Cryptos Portfolio
+        description: |
+          * Bitcoin
+          * Etherum
+          * Tezos
+
 # Footer
 footer_show_references: false
 # references_title: References on request (Override references text)
@@ -159,3 +174,4 @@ sass:
 
 plugins:
  - jekyll-seo-tag
+ - jekyll-spaceship
