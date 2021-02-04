@@ -57,6 +57,30 @@ content:
           * Ruby
           * Python
 
+  - title: Projects
+    layout: list
+    content:
+      - title: FC Biel-Bienne 1896
+        sub_title: iOS- & Android App
+        caption: co-author, up until first release (23.01.2021) of app
+        link: https://www.fcbiel-bienne.ch/
+        link_text: Website
+        additional_links:
+          - title: Play Store
+            icon: fab fa-google-play
+            url: https://play.google.com/store/apps/details?id=ch.fcbielbienne.smartphoneapp
+          - title: App Store
+            icon: fab fa-app-store-ios
+            url: https://apps.apple.com/ch/app/fc-biel-bienne-1896/id1524003452
+        layout: left
+        description: |
+          Die FCB-App bringt dir viele Informationen rund um den Verein:
+          * Push-Benachrichtigungen für News und Resultatmeldungen
+          * Aktuelle Resultate, Spielplan & Tabelle
+          * Informationen zu den Spielern der 1. Mannschaft
+          * Übersicht über die Stadien der Gegner
+          * Alle Artikel des Fanshops
+
   - title: Experience
     layout: list
     content:
