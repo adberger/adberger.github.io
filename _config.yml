@@ -145,6 +145,7 @@ content:
         description: |
           * LFS162x - Introduction to Site Reliability Engineering and DevOps
           * LFS158x - Introduction to Kubernetes
+          * LFS258x - Kubernetes Fundamentals
       - layout: left
         title: Linux Professional Institute
         description: |
