@@ -135,6 +135,11 @@ content:
     layout: list
     content:
       - layout: left
+        title: CNCF
+        sub_title: Cloud Native Computing Foundation
+        description: |
+          * Certified Kubernetes Administrator (CKA)
+      - layout: left
         title: SAFe
         sub_title: Scaled Agile Framework
         description: |
