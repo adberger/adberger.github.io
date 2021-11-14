@@ -87,8 +87,8 @@ content:
       - title: Bedag Informatik AG
         layout: left
         link: www.bedag.ch
-        sub_title: Apprentice System Specialist
-        caption: 2009 - 2013
+        sub_title: Devops Engineer
+        caption: 2020 - present
         quote: >
           Engagement, Integrität und Professionalität
         description: |
@@ -105,8 +105,8 @@ content:
       - title: Bedag Informatik AG
         layout: left
         link: www.bedag.ch
-        sub_title: Devops Engineer
-        caption: 2020 - present
+        sub_title: Apprentice System Specialist
+        caption: 2009 - 2013
         quote: >
           Engagement, Integrität und Professionalität
         description: |
@@ -178,7 +178,6 @@ content:
 
   - title: Investments
     layout: list
-    content:
     content:
       - layout: left
         title: Shares Portfolio
