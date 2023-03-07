@@ -22,7 +22,7 @@ about_profile_image: images/profile.jpg
 about_content: |
   Hi, my name is Adrian Berger.
 
-  I'm living in Switzerland and currently studying computer science.
+  I'm living in Switzerland and currently working for Bedag Informatik AG.
 
 content:
   - title: Skills
@@ -34,6 +34,7 @@ content:
           * Kubernetes
           * Helm
           * GitLab CI
+          * GitOps (Flux)
           * Docker
       - title: Technologies
         layout: left
@@ -46,6 +47,8 @@ content:
         layout: left
         description: |
           * Java (Spring)
+          * PHP (Laravel)
+          * JavaScript (Vue.js)
       - title: Scripting (advanced)
         layout: left
         description: |
@@ -60,6 +63,14 @@ content:
   - title: Projects
     layout: list
     content:
+      - title: FC Biel-Bienne 1896
+        sub_title: Ticketing Shop
+        caption: co-author
+        link: https://tickets.fcbiel-bienne.ch/
+        link_text: Website
+        layout: left
+        description: |
+          Der Ticketing des FC Biel-Bienne 1896 ermöglicht dir das Kaufen von Tickets Online.
       - title: FC Biel-Bienne 1896
         sub_title: iOS- & Android App
         caption: co-author, up until first release (23.01.2021) of app
@@ -118,7 +129,7 @@ content:
       - layout: left
         title: Berner Fachhochschule
         sub_title: Technik und Informatik
-        caption: 2018 - present & ongoing
+        caption: 2018 - 2023
         description: BSc Computer Science
       - layout: left
         title: gibb
@@ -175,20 +186,6 @@ content:
         description: |
           * Gaming
           * Movies/Series
-
-  - title: Investments
-    layout: list
-    content:
-      - layout: left
-        title: Shares Portfolio
-        description: |
-          ![alt text](images/shares.png "Shares Portfolio")
-      - layout: left
-        title: Cryptos Portfolio
-        description: |
-          * Bitcoin
-          * Etherum
-          * Tezos
 
 # Footer
 footer_show_references: false
