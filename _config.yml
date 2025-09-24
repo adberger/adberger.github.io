@@ -1,6 +1,8 @@
 # Site
 repository: adberger/adberger.github.io
-# favicon: images/favicon.ico
+favicon: images/favicon.ico
+url: "https://adberger.github.io"
+baseurl: ""
 
 # Content configuration version
 version: 2
@@ -8,9 +10,12 @@ version: 2
 # Personal info
 name: Adrian Berger
 title: DevOps Engineer
+email: adrian@example.com
+description: >-
+  DevOps Engineer with expertise in cloud-native technologies,based in Switzerland.
 
 # Dark Mode (true/false/never)
-darkmode: false
+darkmode: true
 
 # Social links
 github_username: adberger
@@ -63,6 +68,18 @@ content:
   - title: Projects
     layout: list
     content:
+      - title: Tellbow
+        sub_title: Schwingen
+        caption: author
+        link: https://schwingen.tellbow.ch/
+        link_text: Website
+        layout: left
+        description: |
+          Alles rund ums Schwingen
+          * Resultate
+          * Ranglisten
+          * Statistiken
+          * Schwingerdatenbank
       - title: FC Biel-Bienne 1896
         sub_title: Ticketing Shop
         caption: co-author
@@ -187,6 +204,444 @@ content:
           * Gaming
           * Movies/Series
 
+  - title: Interactive Art
+    layout: text
+    content: |
+      <section id="generative-art" style="margin: 2rem 0; padding: 2rem 1rem; background: #1a1a1a; border-radius: 12px; color: white;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <p style="color: #ccc; margin-bottom: 1rem;">Create dynamic artwork based on uploaded image colors</p>
+          <p style="color: #ccc; font-size: 1.4rem; margin-bottom: 2rem;">
+            Algorithm inspired by <a href="http://www.kultur.design/portfolio/dead-presidents/" style="color: #007bff; text-decoration: none;" target="_blank">Dead Presidents by kultur.design</a>
+          </p>
+        </div>
+
+        <div style="text-align: center; width: 100%; max-width: none;">
+          <canvas id="canvas" width="1000" height="750" style="border: 2px solid #333; cursor: crosshair; background: #000; border-radius: 8px; width: 100%; max-width: 100%; height: auto; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);"></canvas>
+
+          <div style="margin-top: 2rem;">
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-bottom: 2rem;">
+              <div style="text-align: center; min-width: 140px;">
+                <label style="display: block; color: #ccc; margin-bottom: 1rem; font-size: 1.3rem; font-weight: 600;">Sample Rate: <span id="sampleRateValue" style="color: #007bff; font-weight: 700; font-size: 1.4rem;">5</span></label>
+                <input type="range" id="sampleRate" min="1" max="20" value="5" style="width: 140px; height: 8px; background: #333; border-radius: 8px; appearance: none; -webkit-appearance: none;">
+              </div>
+              <div style="text-align: center; min-width: 140px;">
+                <label style="display: block; color: #ccc; margin-bottom: 1rem; font-size: 1.3rem; font-weight: 600;">Shape Points: <span id="shapePointsValue" style="color: #007bff; font-weight: 700; font-size: 1.4rem;">4</span></label>
+                <input type="range" id="shapePoints" min="3" max="10" value="4" style="width: 140px; height: 8px; background: #333; border-radius: 8px; appearance: none; -webkit-appearance: none;">
+              </div>
+              <div style="text-align: center; min-width: 140px;">
+                <label style="display: block; color: #ccc; margin-bottom: 1rem; font-size: 1.3rem; font-weight: 600;">Movement Speed: <span id="movementSpeedValue" style="color: #007bff; font-weight: 700; font-size: 1.4rem;">3</span></label>
+                <input type="range" id="movementSpeed" min="0.5" max="50" step="0.5" value="3" style="width: 140px; height: 8px; background: #333; border-radius: 8px; appearance: none; -webkit-appearance: none;">
+              </div>
+              <div style="text-align: center; min-width: 140px;">
+                <label style="display: block; color: #ccc; margin-bottom: 1rem; font-size: 1.3rem; font-weight: 600;">Generation Speed: <span id="generationSpeedValue" style="color: #007bff; font-weight: 700; font-size: 1.4rem;">8</span></label>
+                <input type="range" id="generationSpeed" min="1" max="500" value="8" style="width: 140px; height: 8px; background: #333; border-radius: 8px; appearance: none; -webkit-appearance: none;">
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; align-items: flex-start;">
+              <div style="text-align: center;">
+                <div style="position: relative; display: inline-block; margin-bottom: 0.5rem;">
+                  <input type="file" id="imageInput" accept="image/*" style="position: absolute; opacity: 0; width: 100%; height: 100%; cursor: pointer; z-index: 1;">
+                  <button id="fileButton" style="background: #007bff; color: white; border: none; padding: 16px 32px; border-radius: 8px; cursor: pointer; font-size: 1.3rem; font-weight: 700; min-width: 180px; box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); transition: all 0.2s ease; position: relative; z-index: 0;">Choose Image</button>
+                </div>
+                <div id="fileName" style="color: #28a745; font-size: 1.1rem; font-weight: 600; min-height: 1.5rem; word-break: break-all; max-width: 180px;"></div>
+              </div>
+              <button id="toggleAutoDraw" style="background: #007bff; color: white; border: none; padding: 16px 32px; border-radius: 8px; cursor: pointer; font-size: 1.3rem; font-weight: 700; min-width: 180px; box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); transition: all 0.2s ease;">Start Auto Draw</button>
+              <button id="clearCanvas" style="background: #6c757d; color: white; border: none; padding: 16px 32px; border-radius: 8px; cursor: pointer; font-size: 1.3rem; font-weight: 700; min-width: 180px; box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3); transition: all 0.2s ease;">Clear Canvas</button>
+              <button id="saveImage" style="background: #28a745; color: white; border: none; padding: 16px 32px; border-radius: 8px; cursor: pointer; font-size: 1.3rem; font-weight: 700; min-width: 180px; box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3); transition: all 0.2s ease;">Save Image</button>
+            </div>
+          </div>
+        </div>
+
+        <style>
+        /* Enhanced range slider styling */
+        input[type="range"] {
+          -webkit-appearance: none;
+          appearance: none;
+          background: #333;
+          border-radius: 8px;
+          height: 8px;
+          outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: #007bff;
+          cursor: pointer;
+          box-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);
+          transition: all 0.2s ease;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+          background: #0056b3;
+          transform: scale(1.1);
+          box-shadow: 0 4px 12px rgba(0, 123, 255, 0.6);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: #007bff;
+          cursor: pointer;
+          border: none;
+          box-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);
+          transition: all 0.2s ease;
+        }
+
+        input[type="range"]::-moz-range-thumb:hover {
+          background: #0056b3;
+          transform: scale(1.1);
+          box-shadow: 0 4px 12px rgba(0, 123, 255, 0.6);
+        }
+
+        /* Button hover effects */
+        button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        button:active {
+          transform: translateY(0);
+        }
+
+        /* Custom file button styling - matches other buttons */
+        #fileButton:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3) !important;
+          background: #0056b3 !important;
+        }
+
+        #fileButton:active {
+          transform: translateY(0);
+        }
+        </style>
+
+        <script>
+        if (typeof GenerativeArt === 'undefined') {
+          class GenerativeArt {
+              constructor() {
+                  this.canvas = document.getElementById('canvas');
+                  if (!this.canvas) return;
+
+                  this.ctx = this.canvas.getContext('2d');
+                  this.init = false;
+                  this.loadedImg = null;
+                  this.processedImg = null;
+                  this.frames = 0;
+                  this.xPos = [];
+                  this.yPos = [];
+                  this.sampleRate = 5;
+                  this.shapePoints = 4;
+                  this.positionValid = false;
+                  this.mouseX = 0;
+                  this.mouseY = 0;
+                  this.isMouseOverCanvas = false;
+                  this.autoDrawActive = false;
+                  this.movementSpeed = 3;
+                  this.generationSpeed = 8;
+                  this.time = 0;
+                  this.autoX = 500;
+                  this.autoY = 375;
+
+                  this.setupEventListeners();
+                  this.setupCanvas();
+                  this.animate();
+                  this.handleResize();
+              }
+
+              handleResize() {
+                  const canvas = this.canvas;
+                  const container = canvas.parentElement;
+                  const containerWidth = container.clientWidth - 20; // Account for padding
+                  const aspectRatio = 750 / 1000; // height / width
+
+                  canvas.style.width = '100%';
+                  canvas.style.height = 'auto';
+                  canvas.style.maxWidth = containerWidth + 'px';
+              }
+
+              setupCanvas() {
+                  this.ctx.fillStyle = 'black';
+                  this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+                  this.ctx.imageSmoothingEnabled = true;
+              }
+
+              setupEventListeners() {
+                  this.canvas.addEventListener('mousemove', (e) => {
+                      const rect = this.canvas.getBoundingClientRect();
+                      const scaleX = this.canvas.width / rect.width;
+                      const scaleY = this.canvas.height / rect.height;
+                      this.mouseX = (e.clientX - rect.left) * scaleX;
+                      this.mouseY = (e.clientY - rect.top) * scaleY;
+                      this.isMouseOverCanvas = true;
+                  });
+
+                  this.canvas.addEventListener('mouseleave', () => {
+                      this.isMouseOverCanvas = false;
+                  });
+
+                  this.canvas.addEventListener('touchmove', (e) => {
+                      e.preventDefault();
+                      const rect = this.canvas.getBoundingClientRect();
+                      const scaleX = this.canvas.width / rect.width;
+                      const scaleY = this.canvas.height / rect.height;
+                      const touch = e.touches[0];
+                      this.mouseX = (touch.clientX - rect.left) * scaleX;
+                      this.mouseY = (touch.clientY - rect.top) * scaleY;
+                      this.isMouseOverCanvas = true;
+                  });
+
+                  const imageInput = document.getElementById('imageInput');
+                  if (imageInput) {
+                      imageInput.addEventListener('change', (e) => {
+                          const file = e.target.files[0];
+                          this.loadImage(file);
+
+                          // Update filename display
+                          const fileNameDiv = document.getElementById('fileName');
+                          if (fileNameDiv) {
+                              if (file) {
+                                  fileNameDiv.textContent = `✓ ${file.name}`;
+                                  fileNameDiv.style.color = '#28a745';
+                              } else {
+                                  fileNameDiv.textContent = '';
+                              }
+                          }
+                      });
+                  }
+
+                  const setupRangeControl = (id, valueId, callback) => {
+                      const element = document.getElementById(id);
+                      const valueElement = document.getElementById(valueId);
+                      if (element && valueElement) {
+                          element.addEventListener('input', (e) => {
+                              const value = callback(e.target.value);
+                              valueElement.textContent = value;
+                          });
+                      }
+                  };
+
+                  setupRangeControl('sampleRate', 'sampleRateValue', (value) => {
+                      this.sampleRate = parseInt(value);
+                      return this.sampleRate;
+                  });
+
+                  setupRangeControl('shapePoints', 'shapePointsValue', (value) => {
+                      this.shapePoints = parseInt(value);
+                      return this.shapePoints;
+                  });
+
+                  setupRangeControl('movementSpeed', 'movementSpeedValue', (value) => {
+                      this.movementSpeed = parseFloat(value);
+                      return this.movementSpeed;
+                  });
+
+                  setupRangeControl('generationSpeed', 'generationSpeedValue', (value) => {
+                      this.generationSpeed = parseInt(value);
+                      return this.generationSpeed;
+                  });
+
+                  const clearButton = document.getElementById('clearCanvas');
+                  if (clearButton) {
+                      clearButton.addEventListener('click', () => this.clearCanvas());
+                  }
+
+                  const saveButton = document.getElementById('saveImage');
+                  if (saveButton) {
+                      saveButton.addEventListener('click', () => this.saveImage());
+                  }
+
+                  const toggleButton = document.getElementById('toggleAutoDraw');
+                  if (toggleButton) {
+                      toggleButton.addEventListener('click', () => this.toggleAutoDraw());
+                  }
+              }
+
+              loadImage(file) {
+                  if (!file) return;
+                  const reader = new FileReader();
+                  reader.onload = (e) => {
+                      const img = new Image();
+                      img.onload = () => {
+                          this.loadedImg = img;
+                          this.init = false;
+                          this.clearCanvas();
+                          this.prepImage();
+                      };
+                      img.src = e.target.result;
+                  };
+                  reader.readAsDataURL(file);
+              }
+
+              prepImage() {
+                  if (!this.loadedImg) return;
+                  const iRatio = this.loadedImg.width / this.loadedImg.height;
+                  const cRatio = this.canvas.width / this.canvas.height;
+                  let drawWidth, drawHeight, offsetX = 0, offsetY = 0;
+
+                  if (iRatio > cRatio) {
+                      drawWidth = this.canvas.width;
+                      drawHeight = drawWidth / iRatio;
+                      offsetY = (this.canvas.height - drawHeight) / 2;
+                  } else {
+                      drawHeight = this.canvas.height;
+                      drawWidth = drawHeight * iRatio;
+                      offsetX = (this.canvas.width - drawWidth) / 2;
+                  }
+
+                  const offCanvas = document.createElement('canvas');
+                  const offCtx = offCanvas.getContext('2d');
+                  offCanvas.width = this.canvas.width;
+                  offCanvas.height = this.canvas.height;
+                  offCtx.drawImage(this.loadedImg, offsetX, offsetY, drawWidth, drawHeight);
+                  this.processedImg = offCtx.getImageData(0, 0, this.canvas.width, this.canvas.height);
+                  this.ctx.save();
+                  this.ctx.globalAlpha = 0.12;
+                  this.ctx.drawImage(offCanvas, 0, 0);
+                  this.ctx.restore();
+                  this.init = true;
+              }
+
+              getColor(x, y, alpha = 150) {
+                  if (!this.processedImg) return `rgba(255, 255, 255, ${alpha / 255})`;
+                  const pixelIndex = this.getPixelIndex(x, y);
+                  const data = this.processedImg.data;
+                  const r = data[pixelIndex];
+                  const g = data[pixelIndex + 1];
+                  const b = data[pixelIndex + 2];
+                  return `rgba(${r}, ${g}, ${b}, ${alpha / 255})`;
+              }
+
+              getPixelIndex(x, y) {
+                  const clampedX = Math.max(0, Math.min(this.canvas.width - 1, Math.floor(x)));
+                  const clampedY = Math.max(0, Math.min(this.canvas.height - 1, Math.floor(y)));
+                  return (clampedY * this.canvas.width + clampedX) * 4;
+              }
+
+              lerpColor(color1, color2, t) {
+                  const getRGBA = (colorStr) => {
+                      const match = colorStr.match(/rgba?\(([^)]+)\)/);
+                      if (match) {
+                          const values = match[1].split(',').map(v => parseFloat(v.trim()));
+                          return values;
+                      }
+                      return [0, 0, 0, 1];
+                  };
+
+                  const rgba1 = getRGBA(color1);
+                  const rgba2 = getRGBA(color2);
+                  const r = Math.round(rgba1[0] + (rgba2[0] - rgba1[0]) * t);
+                  const g = Math.round(rgba1[1] + (rgba2[1] - rgba1[1]) * t);
+                  const b = Math.round(rgba1[2] + (rgba2[2] - rgba1[2]) * t);
+                  const a = rgba1[3] + (rgba2[3] - rgba1[3]) * t;
+                  return `rgba(${r}, ${g}, ${b}, ${a})`;
+              }
+
+              clearCanvas() {
+                  this.ctx.fillStyle = 'black';
+                  this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+                  this.xPos = [];
+                  this.yPos = [];
+                  if (this.processedImg && this.init) {
+                      this.prepImage();
+                  }
+              }
+
+              saveImage() {
+                  const link = document.createElement('a');
+                  link.download = 'generative-art.png';
+                  link.href = this.canvas.toDataURL();
+                  link.click();
+              }
+
+              toggleAutoDraw() {
+                  this.autoDrawActive = !this.autoDrawActive;
+                  const button = document.getElementById('toggleAutoDraw');
+                  if (button) {
+                      button.textContent = this.autoDrawActive ? 'Stop Auto Draw' : 'Start Auto Draw';
+                  }
+                  if (this.autoDrawActive) {
+                      this.time = 0;
+                      this.autoX = this.canvas.width / 2;
+                      this.autoY = this.canvas.height / 2;
+                  }
+              }
+
+              updateAutoPosition() {
+                  if (!this.autoDrawActive) return;
+                  this.time += 0.02 * this.movementSpeed;
+                  this.autoX += (Math.random() - 0.5) * this.movementSpeed * 10;
+                  this.autoY += (Math.random() - 0.5) * this.movementSpeed * 10;
+                  this.autoX = Math.max(0, Math.min(this.canvas.width, this.autoX));
+                  this.autoY = Math.max(0, Math.min(this.canvas.height, this.autoY));
+                  this.mouseX = this.autoX;
+                  this.mouseY = this.autoY;
+                  this.isMouseOverCanvas = true;
+              }
+
+              animate() {
+                  for (let gen = 0; gen < this.generationSpeed; gen++) {
+                      this.updateAutoPosition();
+                      this.frames++;
+                      if (this.frames >= this.sampleRate) {
+                          this.frames = 0;
+                          if (this.isMouseOverCanvas && this.mouseX > 0 && this.mouseY > 0) {
+                              this.positionValid = true;
+                              if (this.xPos.length > 0) {
+                                  const lastX = this.xPos[this.xPos.length - 1];
+                                  const lastY = this.yPos[this.yPos.length - 1];
+                                  if (this.mouseX === lastX && this.mouseY === lastY) {
+                                      this.positionValid = false;
+                                  }
+                              }
+                              if (this.positionValid) {
+                                  this.xPos.push(this.mouseX);
+                                  this.yPos.push(this.mouseY);
+                                  if (this.xPos.length >= this.shapePoints && this.processedImg) {
+                                      const len = this.xPos.length;
+                                      const colA = this.getColor(this.xPos[len - 1], this.yPos[len - 1], 150);
+                                      const colB = this.getColor(this.xPos[len - 2], this.yPos[len - 2], 150);
+                                      const tweenCol = this.lerpColor(colA, colB, 0.5);
+                                      this.ctx.fillStyle = tweenCol;
+                                      this.ctx.beginPath();
+                                      for (let v = 0; v < this.shapePoints; v++) {
+                                          const arrayPos = len - 1 - v;
+                                          const x = this.xPos[arrayPos];
+                                          const y = this.yPos[arrayPos];
+                                          if (v === 0) {
+                                              this.ctx.moveTo(x, y);
+                                          } else {
+                                              this.ctx.lineTo(x, y);
+                                          }
+                                      }
+                                      this.ctx.closePath();
+                                      this.ctx.fill();
+                                  }
+                              }
+                          }
+                      }
+                  }
+                  requestAnimationFrame(() => this.animate());
+              }
+          }
+
+          // Initialize after DOM loads
+          if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', () => {
+                  setTimeout(() => new GenerativeArt(), 100);
+              });
+          } else {
+              setTimeout(() => new GenerativeArt(), 100);
+          }
+        }
+        </script>
+      </section>
+
 # Footer
 footer_show_references: false
 # references_title: References on request (Override references text)
@@ -201,3 +656,29 @@ sass:
 plugins:
  - jekyll-seo-tag
  - jekyll-spaceship
+ - jekyll-sitemap
+ - jekyll-feed
+
+# SEO and Social
+author: Adrian Berger
+twitter:
+  username: adberger
+  card: summary_large_image
+
+# Additional settings for modern features
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Performance
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - CLAUDE.md
