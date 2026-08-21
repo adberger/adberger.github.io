@@ -10,7 +10,7 @@ version: 2
 # Personal info
 name: Adrian Berger
 title: DevOps Engineer
-email: adrian@example.com
+email: adrian@natron.io
 description: >-
   DevOps Engineer with expertise in cloud-native technologies,based in Switzerland.
 
@@ -27,7 +27,7 @@ about_profile_image: images/profile.jpg
 about_content: |
   Hi, my name is Adrian Berger.
 
-  I'm living in Switzerland and currently working for Bedag Informatik AG.
+  I'm living in Switzerland and currently working for Natron Tech AG.
 
 content:
   - title: Skills
@@ -112,11 +112,21 @@ content:
   - title: Experience
     layout: list
     content:
+      - title: Natron Tech AG
+        layout: left
+        link: natron.io
+        sub_title: Platform Engineer & Architect
+        caption: 2025 - present
+        quote: >
+          Focus on your business.
+          We handle the infrastructure.
+        description: |
+          Enterprise-grade infrastructure management with guaranteed SLAs and expert support.
       - title: Bedag Informatik AG
         layout: left
         link: www.bedag.ch
         sub_title: Devops Engineer
-        caption: 2020 - present
+        caption: 2020 - 2025
         quote: >
           Engagement, Integrität und Professionalität
         description: |
